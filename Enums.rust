@@ -1,0 +1,26 @@
+//Enums allow you to create a custom type that "enumerates" all the possible values.
+//Since we are dealing with temperatures, I thought it would be fitting to capture the two scales we use with an Enum.
+
+enum Temp {
+    F(f64),
+    C(f64),
+}
+
+//We use the keyword enum and then define all the possible versions our type can handle. In this case, it is F for Fahrenheit, and C for 
+//Celsius. And each one can hold a floating point number for the degrees.
+//With this, we can now use a match expression to do the actual calculations for conversions:
+
+fn convert_temp(temp: &Temp) -> f64 {
+    match temp {
+        &Temp::F(degrees) => (degrees - 32.0) / 1.8,
+        &Temp::C(degrees) => (degrees * 1.8) + 32.0,
+    }
+}
+
+//This function gets passed a reference to a Temp type. The &
+//signifies it's a reference. This function doesn't need
+//"ownership" of the Temp since we are returning a new float based
+//on it, not mutating it
+
+//We use pattern-matching to do the correct conversion to the other
+//scale, and return a new float.
