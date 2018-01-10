@@ -1,0 +1,11 @@
+//Now to use this conversion! Once again, 
+//the match expression is our friend so we 
+//can show the temperature in both scales:
+
+fn print_temp(temp: &Temp) {
+    match temp {
+        &Temp::F(degrees) => println!("{}F = {}C", degrees, convert_temp(temp)),
+        &Temp::C(degrees) => println!("{}C = {}F", degrees, convert_temp(temp)),
+    }
+}
+
