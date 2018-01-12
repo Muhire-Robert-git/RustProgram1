@@ -47,3 +47,29 @@ fn main() {
 
     sample_temps();
 }
+
+//I put in comments what the correct output should be.
+// We then use a for...in loop to iterate over each of
+// these and output the conversion. Finally, we add in 
+//some headings and call this in main(). And out comes
+// all the correct conversions!
+//...............................................
+
+
+//Welcome to temperature converter!
+
+//Sample conversions:
+//-40F = -40C
+//0F = -17.77777777777778C
+//32F = 0C
+//60F = 15.555555555555555C
+//100F = 37.77777777777778C
+//150F = 65.55555555555556C
+//212F = 100C
+//-40C = -40F
+//0C = 32F
+//15C = 59F
+//30C = 86F
+//60C = 140F
+//100C = 212F
+//200C = 392F
